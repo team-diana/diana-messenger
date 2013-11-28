@@ -22,9 +22,21 @@ Pantilt::~Pantilt() {
 // In questa funzione il nodo della nostra libreria si sottoscrive al nodo del pantilt per 
 // ricevere lo stato ogni volta che questo cambia. chatterCallback e` la funzione che verra` 
 // chiamata ogni volta.
-void Pantilt::ros_comms_init() {
-  ros::NodeHandle n;
+void Pantilt::ros_comms_init() { 
+ 	ros::NodeHandle n;
 	chatter_subscriber = n.subscribe(pantiltStateName.toStdString(), 1000, &Pantilt::chatterCallback, this);
+}
+
+bool setState(PantiltState state){
+ 	ros::NodeHandle  n;
+	ros::Publisher pub = n.advertise<sensor_msgs::JointState>("/ptu/cmd",5);
+	sensor_msgs::JointState::Ptr msg(new sensor_msgs::JointState);
+	msg->position.push_back(state.x);
+	msg->position.push_back(state.y);// = state.y;
+	msg->velocity.push_back(state.speedX);
+	msg->velocity.push_back(state.speedY);
+
+	pub.publish(msg);
 }
 
 // questa funzione viene chiamata ogni volta che lo stato cambia, msg contiene le posizione.

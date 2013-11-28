@@ -49,10 +49,8 @@ public:
   // http://wiki.ros.org/roscpp/Overview/Publishers%20and%20Subscribers#Publishing_to_a_Topic
   //
   // il tipo di messaggio da inviare e` quindi un sensor_msgs::JointState
-  //
-  
-  // bool setState(PantiltState state);
 
+  	bool setState(PantiltState state);
 
 private:
   // Funzione di callback che viene chiamata ogni volta che il pantilt
