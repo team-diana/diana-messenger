@@ -1,3 +1,5 @@
+/*We have added the file diagnostic.cpp, which parses and analyzes the diagnostics
+msg sent to the diagnostics topic and saves its key-values pairs in a hashTable.*/
 
 #include "../include/diagnostic.hpp"
 
