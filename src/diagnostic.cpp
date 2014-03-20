@@ -1,3 +1,5 @@
+/*We have added the file diagnostic.cpp, which parses and analyzes the diagnostics
+msg sent to the diagnostics topic and saves its key-values pairs in a hashTable.*/
 
 #include "../include/diagnostic.hpp"
 
@@ -16,18 +18,7 @@ Diagnostic::Diagnostic(int argc, char** argv)
   
 {
   std::cout << "\n<diagnostic constructor>";
-  //QHash<QString , QVariant> table;
   QHash<QString , QString> table;
- 
- /***Just to try if it works***/
- // table.insert("one" , QVariant(166)); //int
- // table.insert("two" , QVariant(QString::fromStdString("Second"))); //QString doesn't work
- // table.insert("three" , QVariant(false)); //bool
- // table.insert("four" , QVariant(1.5)); //float
- // table.insert("one" , QVariant(55));  //Updates a value
-//std::cout << "\none: " << table["one"].toInt() << "\tthree: " << table["three"].toBool() << "\tfour: " << table["four"].toFloat();
-//std::cout << "\n" << "\ntwo: " << table["due"].toString().toLatin1();
-//qDebug() << "two\t" << table["two"].toString();
 }
 
 Diagnostic::~Diagnostic() {
@@ -53,10 +44,14 @@ void Diagnostic::chatterCallback(const diagnostic_msgs::DiagnosticArray::ConstPt
   //All tha data will be together or there will be many tables (e.g. One for each node)?
   //In the following lines we use only a table for all
 
-  for(int i=0; i<n_status; i++)  //N is the number of diagnosticStatus for each disgnosticArray
+
+  //We need a double cycle (one to iterate over all the diagnosticStatusMsg in the array and one over all the keyValues
+  //for each diagnosticStatusMsg)
+
+  for(int i=0; i<n_status; i++)  //n_status is the number of diagnosticStatus for each disgnosticArray
   {
      int n_pairs=msg->status[i].values.size();
-     for(int j=0; j<n_pairs; j++)  //M is the number of KeyValue pairs for each diagnosticStatus
+     for(int j=0; j<n_pairs; j++)  //n_pairs is the number of KeyValue pairs for each diagnosticStatus
      {
         QString key =  QString(msg->status[i].values[j].key.c_str());
 	//QString value = new QString::fromStdString(msg->status[i].values[j].value);
