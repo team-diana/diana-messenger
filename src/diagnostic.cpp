@@ -16,6 +16,7 @@ Diagnostic::Diagnostic(int argc, char** argv)
   
 {
   std::cout << "\n<diagnostic constructor>";
+<<<<<<< Updated upstream
   QHash<QString , QVariant> table;
   
  /***Just to try if it works***/
@@ -27,6 +28,20 @@ Diagnostic::Diagnostic(int argc, char** argv)
 std::cout << "\none: " << table["one"].toInt() << "\tthree: " << table["three"].toBool() << "\tfour: " << table["four"].toFloat();
 //std::cout << "\n" << "\ntwo: " << table["due"].toString().toLatin1();
 qDebug() << "two\t" << table["two"].toString();
+=======
+  //QHash<QString , QVariant> table;
+  QHash<QString , QString> table;
+ 
+ /***Just to try if it works***/
+ // table.insert("one" , QVariant(166)); //int
+ // table.insert("two" , QVariant(QString::fromStdString("Second"))); //QString doesn't work
+ // table.insert("three" , QVariant(false)); //bool
+ // table.insert("four" , QVariant(1.5)); //float
+ // table.insert("one" , QVariant(55));  //Updates a value
+//std::cout << "\none: " << table["one"].toInt() << "\tthree: " << table["three"].toBool() << "\tfour: " << table["four"].toFloat();
+//std::cout << "\n" << "\ntwo: " << table["due"].toString().toLatin1();
+//qDebug() << "two\t" << table["two"].toString();
+>>>>>>> Stashed changes
 }
 
 Diagnostic::~Diagnostic() {
@@ -52,18 +67,24 @@ void Diagnostic::chatterCallback(const diagnostic_msgs::DiagnosticArray::ConstPt
   //All tha data will be together or there will be many tables (e.g. One for each node)?
   //In the following lines we use only a table for all
 
+<<<<<<< Updated upstream
   //Whe should know how many items there are in the array, otherwise we cannot iterate over it 
 		//We need a double cycle (one to iterate over all the diagnosticStatusMsg in the array and one over all the keyValues
 		//for each diagnosticStatusMsg)
 
+=======
+>>>>>>> Stashed changes
   for(int i=0; i<n_status; i++)  //N is the number of diagnosticStatus for each disgnosticArray
   {
-     std::cout << "We are in a new StatusMsg:\t" << msg->status[i].name << "\n";
      int n_pairs=msg->status[i].values.size();
      for(int j=0; j<n_pairs; j++)  //M is the number of KeyValue pairs for each diagnosticStatus
      {
-        std::cout << "We are in a new key-value pair with key:\t" << msg->status[i].values[j].key << "\n";
-	table.insert(QString::fromStdString(msg->status[i].values[j].key) , QVariant(QString::fromStdString(msg->status[i].values[j].value)));
+        QString key =  QString(msg->status[i].values[j].key.c_str());
+	//QString value = new QString::fromStdString(msg->status[i].values[j].value);
+	QString value =QString(msg->status[i].values[j].value.c_str());  
+	table.insert(key ,value);
+	//qDebug() << "Inserted a new pair with key and value:\n" << key << "\t " << value;	
+     	qDebug() << "New key-value:\t" <<  key << ":\t" << table[key].toString()  << "\n";
      }
   }
   //Q_EMIT newData(data);
