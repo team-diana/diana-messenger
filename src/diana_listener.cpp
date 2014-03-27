@@ -5,7 +5,7 @@
 #include <iostream>
 #include <QDebug>
 
-namespace dianamessager {
+namespace dianamessenger {
 
 using namespace Qt;
 
@@ -25,5 +25,5 @@ void DianaListener::init(const QString& master, const QString& host) {
   listener->on_init(master.toStdString(), host.toStdString());
 }
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 

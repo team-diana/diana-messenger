@@ -5,7 +5,7 @@
 
 #include <QDebug>
 
-namespace dianamessager {
+namespace dianamessenger {
 
 using namespace Qt;
 
@@ -33,5 +33,5 @@ void Listener::run() {
     //Q_EMIT rosShutdown(); // used to signal the gui for a shutdown (useful to roslaunch)
 }
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 

@@ -5,7 +5,7 @@
 
 #include <QDebug>
 
-namespace dianamessager {
+namespace dianamessenger {
 
 using namespace Qt;
 
@@ -37,5 +37,5 @@ void Publisher::run() {
 	ros::spin();
 }
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 

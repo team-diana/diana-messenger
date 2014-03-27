@@ -3,7 +3,7 @@
 #include <iostream>
 #include <QDebug>
 
-namespace dianamessager {
+namespace dianamessenger {
 
 using namespace Qt;
 
@@ -23,5 +23,5 @@ DianaPublisher* DianaFactory::createPublisher(const QString& publisherName) {
   return publisher;
 }
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 

@@ -1,0 +1,4 @@
+<launch>
+  <!--<node pkg="diana_messenger" type="diana_messenger_test" name="diana_messenger_test" />-->
+  <test test-name="test_diagnostic" pkg="diana_messenger" type="diana_messenger_test" />
+</launch>

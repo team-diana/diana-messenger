@@ -11,7 +11,7 @@
 //  * Diana listener implementation
 //  */
 //
-// namespace dianamessager {
+// namespace dianamessenger {
 //
 // template <class T>  class GenericListener {
 //
@@ -35,7 +35,7 @@
 //
 // };
 //
-// }  // namespace dianamessager
+// }  // namespace dianamessenger
 //
 // GenericListener::GenericListener(int argc, char** argv, const QString& publisherName)
 //

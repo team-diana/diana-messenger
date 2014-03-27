@@ -6,7 +6,7 @@
 #include "diana_publisher.hpp"
 
 
-namespace dianamessager {
+namespace dianamessenger {
 
 /**
  *
@@ -45,6 +45,6 @@ private:
 
 };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif

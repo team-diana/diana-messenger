@@ -17,7 +17,7 @@
  *
  * */
 
-namespace dianamessager {
+namespace dianamessenger {
 QNode::QNode(int argc, char** argv, const std::string &name ) :
 	init_argc(argc),
 	init_argv(argv),

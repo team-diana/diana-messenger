@@ -6,7 +6,7 @@
 #include <QThread>
 #include <QStringListModel>
 
-namespace dianamessager {
+namespace dianamessenger {
 
 // Un qnode e` di fatto un nodo del ros
 // Noi usiamo pero` soltanto i nodi per prendere e inviare dati

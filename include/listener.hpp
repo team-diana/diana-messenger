@@ -11,7 +11,7 @@
  * Diana listener implementation
  */
 
-namespace dianamessager {
+namespace dianamessenger {
 
 /**
  * Nodo listener
@@ -38,6 +38,6 @@ private:
 
 };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif

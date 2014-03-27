@@ -11,7 +11,7 @@
  * Diana listener implementation
  */
 
-namespace dianamessager {
+namespace dianamessenger {
 
 class Publisher : public QNode {
 Q_OBJECT
@@ -35,6 +35,6 @@ private:
 
 };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif 

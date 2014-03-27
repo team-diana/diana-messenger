@@ -8,7 +8,7 @@
  * Diana listener public class.
  * */
 
-namespace dianamessager {
+namespace dianamessenger {
 
 class Listener;
 
@@ -42,6 +42,6 @@ private:
 
 };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif

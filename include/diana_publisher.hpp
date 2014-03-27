@@ -8,7 +8,7 @@
  * Diana publisher public class.
  * */
 
-namespace dianamessager {
+namespace dianamessenger {
 
   class Publisher;
 
@@ -34,6 +34,6 @@ namespace dianamessager {
 
   };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif

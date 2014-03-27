@@ -12,7 +12,7 @@
  * Diana listener implementation
  */
 
-namespace dianamessager {
+namespace dianamessenger {
 
 /**
  * Struct che serve per scambiare con la gui i parametri del pantilt.
@@ -72,6 +72,6 @@ private:
 
 };
 
-}  // namespace dianamessager
+}  // namespace dianamessenger
 
 #endif
